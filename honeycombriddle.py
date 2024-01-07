@@ -33,25 +33,23 @@ def getDoubleSideMatch(static1: list[int], static2: list[int], m1: tuple[int, in
         if checkIndicesNextToEachOther(s1c[1], s2c[1]):
             return (m1, s1c, s2c)
     else:
-        #get match between static1 and comb
+        #do the same thing but on the opposite sides of static1 and static2
         s1c = getSingeSideMatch(static1, comb, (m1[0] - 1) % len(static1))
-        #get match between static2 and comb
         s2c = getSingeSideMatch(static2, comb, (m1[1] + 1) % len(static2))
-        #check if the indices are next to each other in comb
         if checkIndicesNextToEachOther(s1c[1], s2c[1]):
             return (m1, s1c, s2c)
     return None
 
 def getTripleSideMatch(static1, static2, static3, m1, m2, comb):
     """get match between static1, static2, static3 and comb with m1 and m2 being the matche between static1 and static2"""
-    #get match between static1 and comb
-    
-    #get match between static2 and comb
-    
-    #get match between static3 and comb
-    
-    #check if the indices are next to each other in comb
-    
+    #get match between static1, static2 and comb
+    s1s2c = getDoubleSideMatch(static1, static2, m1, comb, True)
+    if s1s2c is not None:
+        #get match between static3 and comb
+        s3c = getSingeSideMatch(static3, comb, (s1s2c[2][1] + 1) % len(static3))
+        #check if the indices are next to each other in comb
+        if checkIndicesNextToEachOther(s1s2c[2][1], s3c[1]):
+            return (m1, m2, s1s2c[1], s1s2c[2], s3c)
     return None
 
 
