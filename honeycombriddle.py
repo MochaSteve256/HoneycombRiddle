@@ -1,3 +1,5 @@
+## numbers from the honeycombs
+
 a = [1,3,5,4,2,6]
 b = [1,2,5,6,3,4]
 c = [1,4,2,3,5,6]
@@ -7,6 +9,8 @@ f = [1,6,5,4,3,2]
 g = [1,3,5,2,4,6]
 
 combs = [a,b,c,d,e,f,g]
+
+## functions
 
 def checkIndicesNextToEachOther(i1: int, i2: int):
     """check if i1 and i2 are numbers that are next to each other"""
@@ -39,11 +43,27 @@ def getDoubleSideMatch(static1: list[int], static2: list[int], m1: tuple[int, in
     return None
 
 def getTripleSideMatch(static1, static2, static3, m1, m2, comb):
-    pass
+    """get match between static1, static2, static3 and comb with m1 and m2 being the matche between static1 and static2"""
+    #get match between static1 and comb
+    
+    #get match between static2 and comb
+    
+    #get match between static3 and comb
+    
+    #check if the indices are next to each other in comb
+    
+    return None
 
+
+## algorithm
 
 # define a center comb
 
 # define a side comb
 
-print(getDoubleSideMatch(a,b, (0,0), e, True))
+
+
+
+
+#
+#print(getDoubleSideMatch(a,b, (0,0), e, True))
