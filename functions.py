@@ -40,7 +40,7 @@ def getDoubleSideMatch(static1: list[int], static2: list[int], m1: tuple[int, in
             return (m1, s1c, s2c)
     return None
 
-def getTripleSideMatch(static1, static2, static3, m1, m2, comb):
+def getTripleSideMatch(static1: list[int], static2: list[int], static3: list[int], m1: tuple[int, int], m2: tuple[int, int], comb: list[int]):
     """get match between static1, static2, static3 and comb with m1 and m2 being the matche between static1 and static2"""
     #get match between static1, static2 and comb
     s1s2c = getDoubleSideMatch(static1, static2, m1, comb, False)
